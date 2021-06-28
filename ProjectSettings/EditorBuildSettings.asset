@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Lyn_space/lyn_EndScecne.unity
+    guid: c95d17b281c223746a51a386d58dc2a0
+  - enabled: 1
+    path: Assets/Scenes/Lyn_space/lyn_TitleScecne.unity
+    guid: f40280e27890947449a4cff84504d3fa
+  - enabled: 1
+    path: Assets/Scenes/Lyn_space/lyn_OpelationScecne.unity
+    guid: f7093f27e83aca54cb099f81ab767f8e
   m_configObjects: {}
