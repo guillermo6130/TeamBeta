@@ -1,0 +1,1 @@
+3dでカメラの見た絵を平たんにするにはカメラのprojectionをorthographicに変更する
