@@ -42,6 +42,7 @@ public class LaserBeam_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Laser_bool = true;
+            Debug.Log(0);
         }
         else
         {
