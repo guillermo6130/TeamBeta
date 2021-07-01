@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6250264792654507909}
   - component: {fileID: 5601803689277967953}
   - component: {fileID: 2027884627316413593}
+  - component: {fileID: 5548053825256788779}
   m_Layer: 0
   m_Name: Energy_3
   m_TagString: Untagged
@@ -121,7 +122,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.3
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -184,7 +185,7 @@ TrailRenderer:
     textureMode: 0
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0.1
+  m_MinVertexDistance: 0.01
   m_Autodestruct: 0
   m_Emitting: 1
 --- !u!64 &2027884627316413593
@@ -201,3 +202,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6641500409075336563, guid: 07cc8c6c92a1a4642aec70144daaa759, type: 3}
+--- !u!114 &5548053825256788779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5601803689277967952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a04c8c8f24c3c94bb8399c5ec1fb745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  radius: 0
