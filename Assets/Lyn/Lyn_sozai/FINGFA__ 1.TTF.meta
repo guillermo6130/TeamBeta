@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 425c7a4863844014f82a41820750ec30
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: FingerFiveAl
+  fontNames:
+  - FingerFiveAl
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 61756ea2b3a5cca44b2ebec789c7c7a9, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
