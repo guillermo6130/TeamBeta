@@ -42,7 +42,7 @@ public class Rotate_Energy : MonoBehaviour
     {
         float xd = radius_x * Mathf.Sin(Time.time * speed);
         float yd = radius_y * Mathf.Cos(Time.time * speed);
-        Debug.Log(xd);
+        
         transform.Rotate(new Vector3(xd, yd, 0));
     }
 }
