@@ -355,11 +355,11 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0.1, z: 0}
+  - {x: 0, y: 1.48, z: 0}
   - {x: 0, y: 100, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 102.67033
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -373,8 +373,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 1
       - serializedVersion: 3
-        time: 0.12604281
-        value: 1
+        time: 0.1114783
+        value: 0.91566277
         inSlope: -0.0000004630344
         outSlope: -0.0000004630344
         tangentMode: 0
