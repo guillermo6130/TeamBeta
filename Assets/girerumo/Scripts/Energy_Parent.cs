@@ -33,6 +33,8 @@ public class Energy_Parent : MonoBehaviour
 
     bool check_is_100()
     {
+        Debug.Log(0);
+        Debug.Log(Random.value);
         if (Random.value < is_100)
         {
             return true;
@@ -42,6 +44,8 @@ public class Energy_Parent : MonoBehaviour
 
     bool check_is_under_20()
     {
+        Debug.Log(0);
+        Debug.Log(Random.value);
         if (Random.value < under_20)
         {
             return true;
