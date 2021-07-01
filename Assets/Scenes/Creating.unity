@@ -214,6 +214,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &794099642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794099644}
+  - component: {fileID: 794099643}
+  m_Layer: 0
+  m_Name: Energy_parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &794099643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794099642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08131dd6b77aa154b851865c0f3fbf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Energy_1: {fileID: 5601803689277967952, guid: 0275e7dc8829b3b46b583fb587ff0903,
+    type: 3}
+  Energy_5: {fileID: 3234498274697722536, guid: af28f2c3759f30a4493948f7bfd5e98b,
+    type: 3}
+  Energy_10: {fileID: 2879539620983410835, guid: 8b48c4c87ffeb2547a8dfe5e9b4b3874,
+    type: 3}
+  Energy_50: {fileID: 7824325755230041568, guid: 536dfebd585de1b4eb1cb4bec6cd1c28,
+    type: 3}
+  Energy_100: {fileID: 2239838578028661182, guid: 36edb4bf2d49a0a4a969b521f74b89c9,
+    type: 3}
+  under_20: 80
+  is_100: 50
+--- !u!4 &794099644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794099642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.1003106, y: 5.0198755, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &803102106
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +670,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a04c8c8f24c3c94bb8399c5ec1fb745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyaround: {fileID: 0}
+  speed: 0
+  radius: 0
 --- !u!96 &1211997499
 TrailRenderer:
   serializedVersion: 2

@@ -42,7 +42,7 @@ public class LaserBeam_Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Laser_bool = true;
-            Debug.Log(0);
+            
         }
         else
         {
@@ -51,7 +51,7 @@ public class LaserBeam_Controller : MonoBehaviour
         Laser_lineRenderer.enabled = Laser_bool;
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()/*デバッグ用*/
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(origin + direction * currentHitDistance, width_of_laser);

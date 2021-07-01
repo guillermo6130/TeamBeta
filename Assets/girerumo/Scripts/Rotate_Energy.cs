@@ -15,7 +15,7 @@ public class Rotate_Energy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 10.0f;
+        speed = Random.value*10.0f;
         radius = 2.0f;
         energyaround = transform.root.gameObject;
     }
