@@ -14,6 +14,7 @@ public class Energy_Parent : MonoBehaviour
     public float under_20;
     public float is_100;
 
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class Energy_Parent : MonoBehaviour
         energy_amount = num_Energy();
         Debug.Log(energy_amount);
         create_energy();
+        speed = 3f;
         
     }
 
@@ -30,7 +32,10 @@ public class Energy_Parent : MonoBehaviour
         
     }
 
-
+    private void Move()
+    {
+        
+    }
     bool check_is_100()
     {
         Debug.Log(0);

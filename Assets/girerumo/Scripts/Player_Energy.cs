@@ -20,4 +20,9 @@ public class Player_Energy : MonoBehaviour
     {
         Energy_now = x;
     }
+
+    public int getEnergy()
+    {
+        return Energy_now;
+    }
 }

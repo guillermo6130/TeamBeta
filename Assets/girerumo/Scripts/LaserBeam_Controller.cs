@@ -13,7 +13,8 @@ public class LaserBeam_Controller : MonoBehaviour
     private Vector3 origin;
     private Vector3 direction;
     private GameObject parentVec;
-
+    [SerializeField] private float view_width;
+    [SerializeField] private AnimationCurve curveoflaser;
     private float offsetparent_x;
     private float offsetparent_y_0;
     private float offsetparent_y_1;
@@ -21,14 +22,20 @@ public class LaserBeam_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        view_width = 18f;
+
         Laser_lineRenderer = GetComponent<LineRenderer>();
-        width_of_laser = Laser_lineRenderer.endWidth;
+        /*width_of_laser = Laser_lineRenderer.endWidth;*/
+        width_of_laser = view_width;
         origin = Laser_lineRenderer.GetPosition(0);
         direction = transform.up;
         parentVec = transform.root.gameObject;
         offsetparent_x = parentVec.transform.position.x;
         offsetparent_y_0 = -parentVec.transform.position.y + origin.y;
         offsetparent_y_1 = -parentVec.transform.position.y + Laser_lineRenderer.GetPosition(1).y;
+
+
+        
     }
 
     // Update is called once per frame
@@ -51,6 +58,9 @@ public class LaserBeam_Controller : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            
+            Laser_lineRenderer.widthCurve = curveoflaser;
+            Laser_lineRenderer.widthMultiplier=calLaser_width();
             Laser_bool = true;
             
         }
@@ -74,10 +84,26 @@ public class LaserBeam_Controller : MonoBehaviour
         Laser_lineRenderer.SetPosition(2, (new Vector3(x, 100, 0)));
     }
 
+    void changeLaser_width()
+    {
+        Player_Energy player = parentVec.GetComponent<Player_Energy>();
+        Laser_lineRenderer.startWidth=0;
+        Laser_lineRenderer.endWidth = player.getEnergy() * 0.01f * view_width;
+        width_of_laser= player.getEnergy() * 0.01f * view_width; 
+        Debug.Log(player.getEnergy() * 0.01f * view_width);
+    }
+
     private void OnDrawGizmosSelected()/*デバッグ用*/
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(origin + direction * currentHitDistance, width_of_laser/2);
     }
 
+    float calLaser_width()
+    {
+        Player_Energy player = parentVec.GetComponent<Player_Energy>();
+       
+        return player.getEnergy() * 0.01f * view_width;
+        
+    }
 }
