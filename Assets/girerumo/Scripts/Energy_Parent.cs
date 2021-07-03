@@ -22,19 +22,19 @@ public class Energy_Parent : MonoBehaviour
         energy_amount = num_Energy();
         Debug.Log(energy_amount);
         create_energy();
-        speed = 3f;
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
 
     private void Move()
     {
-        
+        transform.Translate(0, -speed, 0);
     }
     bool check_is_100()
     {
