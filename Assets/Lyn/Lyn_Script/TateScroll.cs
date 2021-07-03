@@ -12,10 +12,10 @@ public class TateScroll : MonoBehaviour
         //下方向にスクロール
         transform.position -= new Vector3(0, Time.deltaTime * speed);
 
-        //Yが-11まで来れば、21.33まで移動する
-        if (transform.position.y <= -12.5f)
+        //Yが-12.9まで来れば、25.86まで移動する
+        if (transform.position.y <= -12.9f)
         {
-            transform.position = new Vector2(0,25.8f);
+            transform.position = new Vector2(0,25.86f);
         }
     }
 }
