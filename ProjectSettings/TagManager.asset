@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ScoreManager
   - Energy
+  - Score
   layers:
   - Default
   - TransparentFX
