@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score_Manager : MonoBehaviour
+public class ScoreManager : MonoBehaviour
 {
-    private int score = 0;
+    [SerializeField] private int score = 0;
     public int Energy_point = 100;
     public int Enemy_point = 100;
-
+    
 
     public int get_score()
     {
@@ -16,7 +16,7 @@ public class Score_Manager : MonoBehaviour
 
     private void add_score(int x)
     {
-        score += x;
+        score += (x);
     }
 
     public void energy_destroyed(int x)
