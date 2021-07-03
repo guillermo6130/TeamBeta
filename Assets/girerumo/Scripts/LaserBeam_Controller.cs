@@ -18,7 +18,7 @@ public class LaserBeam_Controller : MonoBehaviour
     private float offsetparent_x;
     private float offsetparent_y_0;
     private float offsetparent_y_1;
-
+    private GameObject score;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +34,7 @@ public class LaserBeam_Controller : MonoBehaviour
         offsetparent_y_0 = -parentVec.transform.position.y + origin.y;
         offsetparent_y_1 = -parentVec.transform.position.y + Laser_lineRenderer.GetPosition(1).y;
 
+        
 
         
     }
@@ -139,8 +140,19 @@ public class LaserBeam_Controller : MonoBehaviour
             {
                 if (hitObject.tag != "Player")
                 {
+                    if (hitObject.tag == "Energy")
+                    {
+                        ScoreManager player = parentVec.GetComponent<ScoreManager>();
+                        player.energy_destroyed(currentHitObjects.Count);
+                    }
+                    if (hitObject.tag == "Enemy")
+                    {
+                        ScoreManager player = parentVec.GetComponent<ScoreManager>();
+                        player.enemy_destroyed(currentHitObjects.Count);
+                    }
                     Destroy(hitObject, 0.3f);
                 }
+                
                 
             }
         }
