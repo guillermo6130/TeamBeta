@@ -30,6 +30,7 @@ public class Energy_Parent : MonoBehaviour
     void Update()
     {
         Move();
+        delete();
     }
 
     private void Move()
@@ -133,7 +134,14 @@ public class Energy_Parent : MonoBehaviour
         }
     }
 
-
+    void delete()
+    {
+        int ObjCount = this.transform.childCount;
+        if (ObjCount == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     
     
