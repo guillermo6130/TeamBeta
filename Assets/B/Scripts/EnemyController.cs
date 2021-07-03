@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-          this.fallSpeed = 0.01f + 0.1f * Random.value;
+          this.fallSpeed = 0.01f + 0.07f * Random.value;
           this.rotSpeed = 6f + 3f * Random.value;
     }
 
