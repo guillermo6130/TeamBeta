@@ -14,15 +14,18 @@ public class Score_Manager : MonoBehaviour
         return score;
     }
 
-    public void add_score(int x)
+    private void add_score(int x)
     {
         score += x;
     }
 
-    private int energy_destroyed()
+    public void energy_destroyed(int x)
     {
-        return 1;
+        add_score(Energy_point * x);
     }
 
-    private int enemy_destroyed();
+    public void enemy_destroyed(int x)
+    {
+        add_score(Enemy_point * x);
+    }
 }
