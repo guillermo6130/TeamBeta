@@ -22,19 +22,20 @@ public class Energy_Parent : MonoBehaviour
         energy_amount = num_Energy();
         Debug.Log(energy_amount);
         create_energy();
-        speed = 3f;
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
+        delete();
     }
 
     private void Move()
     {
-        
+        transform.Translate(0, -speed, 0);
     }
     bool check_is_100()
     {
@@ -133,7 +134,14 @@ public class Energy_Parent : MonoBehaviour
         }
     }
 
-
+    void delete()
+    {
+        int ObjCount = this.transform.childCount;
+        if (ObjCount == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     
     

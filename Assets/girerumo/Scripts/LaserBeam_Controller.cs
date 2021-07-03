@@ -52,6 +52,8 @@ public class LaserBeam_Controller : MonoBehaviour
             currentHitDistance = hit_test.distance;
         }
         change_laser_position();
+        Laser_stop();
+        Delete_Object();
     }
 
     void Laser_on_off()
@@ -62,13 +64,22 @@ public class LaserBeam_Controller : MonoBehaviour
             Laser_lineRenderer.widthCurve = curveoflaser;
             Laser_lineRenderer.widthMultiplier=calLaser_width();
             Laser_bool = true;
-            
         }
         else
         {
             Laser_bool = false;
         }
         Laser_lineRenderer.enabled = Laser_bool;
+    }
+
+    void Laser_stop()
+    {
+        if (Input.GetKeyUp(KeyCode.Space) && Laser_bool == false)
+        {
+            setPlayer_amountzero();
+            
+        }
+        changeLaser_width();
     }
 
     void change_laser_position()
@@ -90,7 +101,7 @@ public class LaserBeam_Controller : MonoBehaviour
         Laser_lineRenderer.startWidth=0;
         Laser_lineRenderer.endWidth = player.getEnergy() * 0.01f * view_width;
         width_of_laser= player.getEnergy() * 0.01f * view_width; 
-        Debug.Log(player.getEnergy() * 0.01f * view_width);
+        /*Debug.Log(player.getEnergy() * 0.01f * view_width);*/
     }
 
     private void OnDrawGizmosSelected()/*デバッグ用*/
@@ -106,4 +117,34 @@ public class LaserBeam_Controller : MonoBehaviour
         return player.getEnergy() * 0.01f * view_width;
         
     }
+
+    void setPlayer_amountzero()
+    {
+        Player_Energy player = parentVec.GetComponent<Player_Energy>();
+
+        player.setEnergy(0);
+    }
+
+    int getPlayer_amount()
+    {
+        Player_Energy player = parentVec.GetComponent<Player_Energy>();
+        return player.getEnergy();
+    }
+
+    void Delete_Object()
+    {
+        if (getPlayer_amount() != 0 && Laser_bool == true)
+        {
+            foreach (GameObject hitObject in currentHitObjects)
+            {
+                if (hitObject.tag != "Player")
+                {
+                    Destroy(hitObject, 0.3f);
+                }
+                
+            }
+        }
+    }
+
+    
 }

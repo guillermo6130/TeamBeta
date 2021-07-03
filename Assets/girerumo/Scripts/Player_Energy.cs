@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Energy : MonoBehaviour
 {
     private int Energy_now;
+    
     private void Start()
     {
         Energy_now = 0;
