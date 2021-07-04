@@ -8,11 +8,11 @@ public class RocketController : MonoBehaviour {
 
     void Update(){
         Debug.Log(this.transform.position.x);
-        if (Input.GetKey(KeyCode.LeftArrow) && !(this.transform.position.x <= -8))
+        if (Input.GetKey(KeyCode.LeftArrow) && !(this.transform.position.x <= -7.5f))
         {
             transform.Translate(-0.1f, 0, 0);
         }
-        if (Input.GetKey(KeyCode.RightArrow) && !(this.transform.position.x >= 8))
+        if (Input.GetKey(KeyCode.RightArrow) && !(this.transform.position.x >= 7.5f))
         {
             transform.Translate(0.1f, 0, 0);
         }
