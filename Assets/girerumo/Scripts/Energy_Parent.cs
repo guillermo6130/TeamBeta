@@ -14,27 +14,33 @@ public class Energy_Parent : MonoBehaviour
     public float under_20;
     public float is_100;
 
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         energy_amount = num_Energy();
-        Debug.Log(energy_amount);
+        /*Debug.Log(energy_amount);*/
         create_energy();
+        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Move();
+        delete();
     }
 
-
+    private void Move()
+    {
+        transform.Translate(0, -speed, 0);
+    }
     bool check_is_100()
     {
-        Debug.Log(0);
-        Debug.Log(Random.value);
+        /*Debug.Log(0);
+        Debug.Log(Random.value);*/
         if (Random.value < is_100)
         {
             return true;
@@ -44,8 +50,8 @@ public class Energy_Parent : MonoBehaviour
 
     bool check_is_under_20()
     {
-        Debug.Log(0);
-        Debug.Log(Random.value);
+        /*Debug.Log(0);
+        Debug.Log(Random.value);*/
         if (Random.value < under_20)
         {
             return true;
@@ -128,7 +134,14 @@ public class Energy_Parent : MonoBehaviour
         }
     }
 
-
+    void delete()
+    {
+        int ObjCount = this.transform.childCount;
+        if (ObjCount == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     
     
