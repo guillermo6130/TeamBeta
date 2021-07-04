@@ -14,5 +14,6 @@ public class EnemyMaker : MonoBehaviour {
     // Update is called once per frame
     void MakeEnemy() {
           Instantiate (Enemy_1, new Vector3 (-8f + 16 * Random.value, 4, 0), Quaternion.identity);
+        
     }
 }
