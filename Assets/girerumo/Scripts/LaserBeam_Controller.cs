@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserBeam_Controller : MonoBehaviour
 {
-    private bool Laser_bool = true;
+    private bool Laser_bool = false;
     LineRenderer Laser_lineRenderer;
     float maxDistance = 100;
     float width_of_laser;
@@ -19,6 +19,9 @@ public class LaserBeam_Controller : MonoBehaviour
     private float offsetparent_y_0;
     private float offsetparent_y_1;
     private GameObject score;
+
+    public CameraShake shake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,7 @@ public class LaserBeam_Controller : MonoBehaviour
 
         Laser_lineRenderer = GetComponent<LineRenderer>();
         /*width_of_laser = Laser_lineRenderer.endWidth;*/
-        width_of_laser = view_width;
+        width_of_laser = 0;
         origin = Laser_lineRenderer.GetPosition(0);
         direction = transform.up;
         parentVec = transform.root.gameObject;
@@ -45,6 +48,7 @@ public class LaserBeam_Controller : MonoBehaviour
         Laser_on_off();
         currentHitObjects.Clear();
         currentHitDistance = maxDistance;
+        width_of_laser=calLaser_width();
         origin = Laser_lineRenderer.GetPosition(0);
         RaycastHit[] all_hit=Physics.SphereCastAll(origin,width_of_laser/2,transform.up,maxDistance);
         foreach(RaycastHit hit_test in all_hit)
@@ -53,23 +57,25 @@ public class LaserBeam_Controller : MonoBehaviour
             currentHitDistance = hit_test.distance;
         }
         change_laser_position();
-        Laser_stop();
-        Delete_Object();
+        /*Laser_stop();*/
+        
     }
 
     void Laser_on_off()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             
             Laser_lineRenderer.widthCurve = curveoflaser;
             Laser_lineRenderer.widthMultiplier=calLaser_width();
             Laser_bool = true;
+            shake.Shake(0.2f, 0.1f);
+            Invoke("Laser_stop1", 0.2f);
+            Invoke("Delete_Object", 0f);
         }
-        else
-        {
-            Laser_bool = false;
-        }
+        
+        
+        
         Laser_lineRenderer.enabled = Laser_bool;
     }
 
@@ -78,8 +84,26 @@ public class LaserBeam_Controller : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space) && Laser_bool == false)
         {
             setPlayer_amountzero();
-            
+            ScoreManager player = parentVec.GetComponent<ScoreManager>();
+            Player_Energy playerE = parentVec.GetComponent<Player_Energy>();
+
+            player.beamed(playerE.getEnergy());
+
         }
+        changeLaser_width();
+    }
+
+    void Laser_stop1()
+    {
+        
+         setPlayer_amountzero();
+         ScoreManager player = parentVec.GetComponent<ScoreManager>();
+        Player_Energy playerE = parentVec.GetComponent<Player_Energy>();
+        player.beamed(playerE.getEnergy());
+        Laser_bool = false;
+
+
+
         changeLaser_width();
     }
 
@@ -140,13 +164,28 @@ public class LaserBeam_Controller : MonoBehaviour
             {
                 if (hitObject.tag != "Player")
                 {
+                    
+
+                    //Debug.Log(hitObject.tag);
                     if (hitObject.tag == "Energy")
                     {
                         ScoreManager player = parentVec.GetComponent<ScoreManager>();
                         player.energy_destroyed(currentHitObjects.Count);
+                        SE_Destroyed se = hitObject.GetComponent<SE_Destroyed>();
+                        if (se != null)
+                        {
+                            se.playSound_destroyed();
+
+                        }
                     }
                     if (hitObject.tag == "Enemy")
                     {
+                        SE_Destroyed se = hitObject.GetComponent<SE_Destroyed>();
+                        if (se != null)
+                        {
+                            se.playSound_destroyed();
+
+                        }
                         ScoreManager player = parentVec.GetComponent<ScoreManager>();
                         player.enemy_destroyed(currentHitObjects.Count);
                     }
@@ -158,5 +197,8 @@ public class LaserBeam_Controller : MonoBehaviour
         }
     }
 
+
+    
+    
     
 }
