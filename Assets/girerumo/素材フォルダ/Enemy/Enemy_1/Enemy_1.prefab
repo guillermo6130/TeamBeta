@@ -238,3 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy_1_Bullet: {fileID: 8195911895891671352, guid: afb1eb4f911f15a4a8ccf5317f62686e,
     type: 3}
+  bullet_rate: 3.1
+  moveSpeed: 0
+  rotSpeed: 0
