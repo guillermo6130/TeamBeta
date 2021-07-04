@@ -17,7 +17,7 @@ public class Energy_create : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(span);
-            Debug.LogFormat("{0}秒経過", span);
+            /*Debug.LogFormat("{0}秒経過", span);*/
             int x = Random.Range(-8, 8);
             Instantiate(Energy_parent,new Vector3(x,8,0), Quaternion.identity);
         }

@@ -20,7 +20,7 @@ public class Energy_Parent : MonoBehaviour
     void Start()
     {
         energy_amount = num_Energy();
-        Debug.Log(energy_amount);
+        /*Debug.Log(energy_amount);*/
         create_energy();
         
         
@@ -39,8 +39,8 @@ public class Energy_Parent : MonoBehaviour
     }
     bool check_is_100()
     {
-        Debug.Log(0);
-        Debug.Log(Random.value);
+        /*Debug.Log(0);
+        Debug.Log(Random.value);*/
         if (Random.value < is_100)
         {
             return true;
@@ -50,8 +50,8 @@ public class Energy_Parent : MonoBehaviour
 
     bool check_is_under_20()
     {
-        Debug.Log(0);
-        Debug.Log(Random.value);
+        /*Debug.Log(0);
+        Debug.Log(Random.value);*/
         if (Random.value < under_20)
         {
             return true;

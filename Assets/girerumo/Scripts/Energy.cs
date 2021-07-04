@@ -24,13 +24,11 @@ public class Energy : MonoBehaviour
         {
             Player_Energy player = other.GetComponentInParent<Player_Energy>();
             player.addEnergy(Energy_amount);
-
+            SE_Destroyed se = this.GetComponent<SE_Destroyed>();
+            se.playSound_collected();
             Destroy(this.gameObject);
         }
     }
 
-    private void OnDestroy()
-    {
-        
-    }
+    
 }
