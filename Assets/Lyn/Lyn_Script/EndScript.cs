@@ -11,5 +11,6 @@ public class EndScript : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("終了 押された!");  // ログを出力
+        Application.Quit();
     }
 }
