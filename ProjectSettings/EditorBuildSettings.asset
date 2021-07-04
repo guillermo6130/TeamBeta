@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lyn/lyn_MainScene.unity
     guid: bcb92f17bc74af54589ae0df4cab7cb4
+  - enabled: 1
+    path: Assets/Scenes/Creating.unity
+    guid: 558f3a9d357ccaa48bd2ee33af39b495
   m_configObjects: {}

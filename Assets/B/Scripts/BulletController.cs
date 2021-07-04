@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+
+    public float bullet_speed;
     void Update() {
-           transform.Translate (0, 0.2f, 0);
+           transform.Translate (0, bullet_speed, 0);
            
            if (transform.position.y > 10) {
                    Destroy (gameObject);

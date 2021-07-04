@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketController : MonoBehaviour {
 
-    public GameObject bulletPrefab;
+  
 
     void Update(){
             if (Input.GetKey (KeyCode.LeftArrow)) {
@@ -19,8 +19,6 @@ public class RocketController : MonoBehaviour {
             if (Input.GetKey (KeyCode.DownArrow)) {
                     transform.Translate( 0, -0.1f, 0);
             }
-            if (Input.GetKeyDown (KeyCode.Space)) {
-                    Instantiate (bulletPrefab, transform.position, Quaternion.identity);
-            }
+            
     }
 }

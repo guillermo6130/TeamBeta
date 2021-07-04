@@ -12,6 +12,6 @@ public class startScript : MonoBehaviour
     {
         Debug.Log("スタート 押された!");  // ログを出力
 
-        SceneManager.LoadScene("lyn_MainScene"); // メイン画面へ飛ぶ
+        SceneManager.LoadScene("Creating"); // メイン画面へ飛ぶ
     }
 }
