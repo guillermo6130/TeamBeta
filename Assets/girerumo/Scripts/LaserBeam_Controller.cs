@@ -19,6 +19,9 @@ public class LaserBeam_Controller : MonoBehaviour
     private float offsetparent_y_0;
     private float offsetparent_y_1;
     private GameObject score;
+
+    public CameraShake shake;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +69,7 @@ public class LaserBeam_Controller : MonoBehaviour
             Laser_lineRenderer.widthCurve = curveoflaser;
             Laser_lineRenderer.widthMultiplier=calLaser_width();
             Laser_bool = true;
+            shake.Shake(0.2f, 0.1f);
             Invoke("Laser_stop1", 0.2f);
             Invoke("Delete_Object", 0f);
         }
